@@ -1,0 +1,48 @@
+# Dependencias de Node.js
+node_modules/
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Registros
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Cobertura de pruebas
+coverage/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Configuración local de editores
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Archivos generados
+dist/
+build/
+
+# Archivos de depuración
+.nyc_output/
+
+# Archivos comprimidos y copias de seguridad
+*.zip
+*.rar
+*.7z
