@@ -1,0 +1,34 @@
+<header id="header">
+  <div class="center">
+    <!-- LOGO -->
+    <div id="logo">
+      <a routerLink="/inicio" style="text-decoration: none; color: inherit;">
+        <img src="/assets/images/angular.svg" class="app-logo" alt="Logotipo Angular" />
+        <span id="brand">
+          <strong>Blog</strong>Angular
+        </span>
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <nav id="menu">
+      <ul>
+        <li>
+          <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="/blog" routerLinkActive="active">Blog</a>
+        </li>
+        <li>
+          <a routerLink="/formulario" routerLinkActive="active">Formulario</a>
+        </li>
+        <li>
+          <a routerLink="/crear-articulo" routerLinkActive="active">Crear Artículo</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- LIMPIAR FLOTADOS -->
+    <div class="clearfix"></div>
+  </div>
+</header>
