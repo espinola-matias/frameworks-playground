@@ -1,9 +1,6 @@
-'use strict';
-
-require('dotenv').config();
-
-const mongoose = require('mongoose');
-const app = require('./app');
+import 'dotenv/config';
+import mongoose from 'mongoose';
+import app from './app.js';
 
 const port = process.env.PORT || 3900;
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/api_rest_blog';

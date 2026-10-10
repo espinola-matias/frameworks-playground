@@ -1,9 +1,7 @@
-'use strict';
-
-const express = require('express');
-const multer = require('multer');
-const path = require('path');
-const ArticleController = require('../controllers/article');
+import express from 'express';
+import multer from 'multer';
+import path from 'path';
+import ArticleController from '../controllers/article.js';
 
 const router = express.Router();
 
@@ -46,4 +44,4 @@ router.post('/upload-image/:id?', upload.single('file0'), ArticleController.uplo
 router.get('/get-image/:image', ArticleController.getImage);
 router.get('/search/:search', ArticleController.search);
 
-module.exports = router;
+export default router;

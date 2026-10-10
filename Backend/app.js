@@ -1,15 +1,14 @@
-'use strict';
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import articleRoutes from './routes/article.js';
 
-// Cargar módulos de Node para crear el servidor
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Ejecutar express (http)
 const app = express();
-
-// Cargar ficheros de rutas
-const articleRoutes = require('./routes/article');
 
 // Configuración de CORS desde variables de entorno
 const corsOptions = {
@@ -29,5 +28,5 @@ app.use('/api/uploads', express.static(path.join(__dirname, 'upload')));
 // Añadir prefijos a rutas / Cargar rutas
 app.use('/api', articleRoutes);
 
-// Exportar módulo (fichero actual)
-module.exports = app;
+// Exportar aplicación
+export default app;
