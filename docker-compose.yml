@@ -1,0 +1,29 @@
+services:
+  db:
+    image: mongo:latest
+    container_name: mongodb_blog
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: node_api_blog
+    restart: always
+    ports:
+      - "3900:3900"
+    environment:
+      - PORT=3900
+      - MONGODB_URI=mongodb://db:27017/api_rest_blog
+    volumes:
+      - ./Backend:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+volumes:
+  mongo_data:
