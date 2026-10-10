@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Aplicación de blog y gestión de usuarios",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"

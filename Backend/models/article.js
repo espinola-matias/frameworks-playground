@@ -1,6 +1,4 @@
-'use strict';
-
-const { Schema, model } = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const ArticleSchema = new Schema({
     title: {
@@ -24,4 +22,4 @@ const ArticleSchema = new Schema({
     }
 });
 
-module.exports = model('Article', ArticleSchema);
+export default model('Article', ArticleSchema);

@@ -1,9 +1,11 @@
-'use strict';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fs from 'fs';
+import validator from 'validator';
+import Article from '../models/article.js';
 
-const validator = require('validator');
-const fs = require('fs');
-const path = require('path');
-const Article = require('../models/article');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const controller = {
 
@@ -267,4 +269,4 @@ const controller = {
 
 };
 
-module.exports = controller;
+export default controller;
