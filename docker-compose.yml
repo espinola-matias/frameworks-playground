@@ -1,3 +1,5 @@
+name: curso-js
+
 services:
   db:
     image: mongo:latest
@@ -7,8 +9,16 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - blog-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   api:
+    image: curso-js-api
     build:
       context: ./Backend
       dockerfile: Dockerfile
@@ -23,7 +33,14 @@ services:
       - ./Backend:/app
       - /app/node_modules
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    networks:
+      - blog-network
+
+networks:
+  blog-network:
+    driver: bridge
 
 volumes:
   mongo_data:
